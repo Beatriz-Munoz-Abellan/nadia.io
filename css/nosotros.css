@@ -1,0 +1,420 @@
+/* ********************************* GENERAL ************************************** */
+
+/* Animación genérica para cualquier sección o elemento */
+.animar {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación para imágenes que entran desde los lados */
+.animar-lateral {
+  opacity: 0;
+  transform: translateX(-100px); /* izquierda por defecto */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animar-lateral.derecha {
+  transform: translateX(100px);
+}
+
+.animar-lateral.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ********************************* TRABAJOS ************************************** */
+.trabajo {
+  padding: 50px;
+  border-bottom: 2px solid #346231;
+}
+
+.contenedor-trabajo {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px;
+}
+
+.pasos {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  color: #346231;
+  gap: 30px;
+}
+
+.paso-contenido {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 25px;
+  font-size: 15px;
+}
+
+.paso h3 {
+  font-size: 35px;
+  margin: 0;
+  line-height: 1;
+  padding-top: 5px;
+}
+
+.paso h4 {
+  font-size: 18px;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.paso p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.colorN {
+  color: #000 !important;
+}
+
+/* Imágenes de trabajos */
+.imagenes-trabajo {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "img1 img2"
+    "img1 img3"
+    "img4 img4";
+  gap: 5px;
+}
+
+.img1 { grid-area: img1; }
+.img2 { grid-area: img2; }
+.img3 { grid-area: img3; }
+.img4 { grid-area: img4; height: 200px; }
+
+.imagenes-trabajo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ********************************* UBICACIÓN ************************************** */
+.ubicacion {
+  text-align: center;
+  padding: 40px 0;
+  border-bottom: 2px solid #346231;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.mapa img,
+.mapa iframe {
+  max-width: 100%;
+  width: 500px;
+  height: 400px;
+}
+
+.ubicacion p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+/* ********************************* HORARIO ************************************** */
+.horario-container {
+  width: 100%;
+  padding: 60px 30px;
+  color: #346231;
+  background-color: #fff;
+}
+
+.horario-header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.horario-grid {
+  display: grid;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.dia {
+  background-color: rgba(52, 98, 49, 0.05);
+  border: 1px solid rgb(52, 98, 49);
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.dia:hover {
+  transform: scale(1.05);
+  background-color: rgba(52, 98, 49, 0.1);
+}
+
+.dia h3 {
+  font-size: 1.5em;
+}
+
+.hora {
+  font-size: 1em;
+}
+
+.cerrado {
+  color: #789b78;
+  font-style: italic;
+}
+
+
+/* ********************************* FORMULARIO ************************************** */
+
+/* Toast mensaje */
+.toast {
+  color: #000000;
+  opacity: 0;
+  border: none;
+  margin: auto; 
+  text-align: center;
+  width: 40%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.formulario {
+  width: 100%;
+  height: 100%;
+}
+
+.presupuesto_header{
+  margin-bottom: 70px;
+}
+
+form.form-grid {
+  width: 100%;
+  margin: auto;
+  padding: 4% 0;
+  max-width: 35%;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-container input,
+.grid-container textarea {
+  padding: 10px;
+  background: #ddd;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.grid-container input:focus,
+.grid-container textarea:focus {
+  outline: none;
+  border: 2px solid #346231;
+  background: #fff;
+}
+
+.grid-full {
+  grid-column: 1 / -1;
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Checkboxes */
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin: 45px 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkboxes input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.2);
+}
+
+.checkboxes a {
+  color: #357edd;
+  text-decoration: none;
+}
+
+/* Botón */
+.enviar {
+  padding: 10px 25px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.enviar:hover {
+  background-color: #346231;
+  transform: scale(1.05);
+}
+
+/* ********************************* RESPONSIVE ************************************** */
+@media (max-width: 992px) {
+  .contenedor-trabajo {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .imagenes-trabajo {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "img1 img2"
+      "img3 img4";
+  }
+  .horario-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .paso-contenido {
+    grid-template-columns: 1fr;
+  }
+  .imagenes-trabajo {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "img1"
+      "img2"
+      "img3"
+      "img4";
+  }
+  .horario-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .horario-header {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .horario-grid {
+    grid-template-columns: 1fr;
+  }
+  .trabajo {
+    padding: 30px 10px;
+  }
+  .ubicacion {
+    padding: 30px 10px;
+  }
+}
+
+/* ********************************* RESPONSIVE FORMULARIO ************************************** */
+
+/* Para pantallas pequeñas */
+@media screen and (max-width: 1024px) {
+  form.form-grid {
+    max-width: 70%;
+    padding: 5% 0;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .grid-container input,
+  .grid-container textarea {
+    width: 100%;
+  }
+
+  .enviar {
+    width: 100%;
+    padding: 12px 0;
+  }
+}
+
+/* Para tablets y móviles */
+@media screen and (max-width: 768px) {
+  form.form-grid {
+    max-width: 90%;
+    padding: 5% 0;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  textarea {
+    height: 120px;
+  }
+}
+
+/* Para móviles muy pequeños */
+@media screen and (max-width: 480px) {
+  form.form-grid {
+    padding: 7% 5%;
+  }
+
+  .horario-header,
+  .trabajo h2 {
+    font-size: 1.5em;
+  }
+
+  .paso h3 {
+    font-size: 28px;
+  }
+
+  .paso h4 {
+    font-size: 16px;
+  }
+
+  .paso p {
+    font-size: 14px;
+  }
+
+  .grid-container input,
+  .grid-container textarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .enviar {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}

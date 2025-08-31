@@ -1,0 +1,269 @@
+/* ==================== CATÁLOGOS ==================== */
+.catalogos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Máximo 4 columnas */
+  gap: 20px;
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* ==================== COLCHONES ==================== */
+#colchones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow: visible; /* permite que los hijos sobresalgan */
+}
+
+.infoCol {
+  color: #346231;
+}
+
+.colchon {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+/* Imagen principal */
+.colchon img, .vestidor img {
+  width: 100%;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Overlay oculto por defecto */
+.colchon .infoExtra {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: white;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     
+  justify-content: center; 
+  z-index: 2;
+  overflow: hidden; 
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Hover: aparece encima */
+.colchon:hover .infoExtra {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Imagen principal se oculta al hover */
+.colchon:hover .imgPrincipal {
+  opacity: 0;
+}
+
+/* Imagen del overlay */
+.colchon .colchonExtendido {
+  max-width: 60%;
+  max-height: 60%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.colchon .modelo,
+.colchon .infoExtra p, .almohada .modelo, .almohada .infoExtra p{
+  text-align: left;
+  font-size: 14px;
+  text-transform: none;
+  color: #333;
+}
+
+.exteso:hover {
+  padding-bottom: 40px;
+}
+
+/* Cuando entra en pantalla */
+.colchon.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Animación escalonada (delay por índice) */
+.colchon[data-index] {
+  transition-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+
+/* ==================== SILLAS// ALMOHADA ==================== */
+
+.silla .modelo {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #346231;
+}
+
+/* Estado inicial: invisible y desplazado */
+.silla, .almohada {
+  opacity: 0;
+  text-align: center;
+  transform: translateY(50px) scale(0.80);
+  transition: all 0.6s ease-out;
+}
+
+/* Animación cuando entra en pantalla */
+.silla.visible, .almohada.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Animación escalonada: delay por índice */
+.silla[data-index], .almohada[data-index]{
+  transition-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+.silla img, .almohada img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.silla:hover img, .almohada:hover img {
+  transform: scale(1.05);
+  /* Zoom ligero al pasar el ratón */
+}
+
+/* ==================== VESTIDORES ==================== */
+#vestidores {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+
+
+.vestidor, .escritorio{
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+.vestidor.visible, .escritorio.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.vestidor[data-index], .escritorio[data-index] {
+  transition-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+/* Imagen principal */
+.vestidor .imgPrincipal,  .escritorio .imgPrincipal {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.4s ease-in-out;
+  display: block;
+}
+
+/* Imagen extendida */
+.vestidor .vestidorExtendido, .escritorio .escritorioExtendido {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+/* Hover: intercambia imágenes */
+.vestidor:hover .imgPrincipal, .escritorio:hover .imgPrincipal {
+  opacity: 0;
+}
+.vestidor:hover .vestidorExtendido, .escritorio:hover .escritorioExtendido {
+  opacity: 1;
+}
+
+/* Texto modelo */
+.vestidor .modelo, .escritorio .modelo {
+  position: relative;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #346231;
+}
+
+
+/* ==================== ESCRITORIOS ==================== */
+#escritorios {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ==================== RESPONSIVE ==================== */
+/* Tablets */
+
+@media (max-width: 1024px) {
+  .colchon:hover {
+    padding-bottom: 40px;
+  }
+  #colchones{
+    width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  #colchones, #vestidores, #escritorios, .catalogos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .colchon .colchonExtendido {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .colchon:hover {
+    padding-bottom: 60px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .catalogos {
+    width: 100%;
+  }
+
+  #colchones, #vestidores {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .colchon .colchonExtendido {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .colchon:hover {
+    padding-bottom: 100px;
+  }
+
+  .colchon .modelo,
+  .colchon .infoExtra p {
+    font-size: 13px;
+  }
+}
+

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body, .correo {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+
+}
+
+.correo{
+  text-transform: none;
+
+}
+
+/* Animación de aparición */
+.animado {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animado.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 999;
+  background-color: #346231;
+  color: white;
+  box-shadow: 0 1px 1px #89d684;
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+
+  /* Animación base */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Cuando se activa */
+#backToTopBtn.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Hover con efecto zoom */
+#backToTopBtn:hover {
+  background-color: #2a4e27;
+  transform: scale(1.1);
+}
+
+footer {
+  background-color: #346231;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 20px 40px;
+  gap: 20px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contactos {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contactos p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.contactos .fa {
+  font-size: 30px;
+  padding-left: 15px;
+  padding-right: 10px;
+
+}
+
+/* Avisos legales */
+.avisos p {
+  text-align: right;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* Tablets y móviles */
+@media (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: left;
+    /* predeterminado para todo el footer */
+    padding: 20px 15px;
+  }
+
+  .contactos {
+    flex-direction: column;
+    align-items: flex-start;
+    /* alineación a la izquierda */
+    gap: 12px;
+    margin-bottom: 10px;
+    /* separación del aviso legal */
+  }
+
+  .contactos p {
+    justify-content: flex-start;
+    /* asegura que el contenido quede a la izquierda */
+    font-size: 14px;
+  }
+
+  .contactos .fa {
+    font-size: 20px;
+  }
+
+  .avisos p {
+    text-align: center;
+    /* aviso legal centrado */
+    font-size: 13px;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 480px) {
+  footer {
+    padding: 15px 10px;
+  }
+
+  .contactos {
+    gap: 8px;
+  }
+
+  .contactos p {
+    font-size: 13px;
+  }
+
+  .contactos .fa {
+    font-size: 18px;
+  }
+
+  .avisos p {
+    font-size: 12px;
+  }
+}

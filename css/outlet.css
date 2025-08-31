@@ -1,0 +1,163 @@
+.iva {
+  color: #346231;
+  text-align: center;
+  margin: auto;
+  background-color: rgb(255, 217, 0);
+  padding: 16px 0px;
+  font-weight: bold;
+}
+
+/* ===== CATÁLOGO ===== */
+.catalogoOutlete {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 80px;
+  margin: auto;
+  width: 90%;
+  padding: 80px 50px;
+}
+
+.producto {
+  position: relative;
+  opacity: 0; /* animación */
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.6s ease-out;
+  z-index: 1;
+}
+
+.producto.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.producto[data-index] {
+  transition-delay: calc(var(--delay, 0) * 0.1s);
+}
+
+/* 🔥 Caso especial: Sillas */
+.sillaOutlet .imagenes {
+  display: grid;
+  grid-template-columns: 1fr;       
+  place-items: center;      
+}
+
+.sillaOutlet .imagenes img {
+  width: auto;                      
+  max-width: 100%;                  
+  height: 380px;                    
+  object-fit: contain;              
+}
+
+.imagenes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  border: #346231 solid 2px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.imagenes img {
+  width: 100%;
+  height: 380px; 
+  object-fit: cover;
+}
+
+.oferta {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  background: rgb(255, 217, 0);
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  padding: 20px 0;
+}
+
+.verde, .info {
+  color: #346231;
+}
+
+.precio {
+  font-size: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .catalogoOutlete {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 60px 30px;
+  }
+
+  .imagenes img,
+  .sillaOutlet .imagenes img {
+    height: 300px;
+  }
+
+  .oferta {
+    width: 100px;
+    height: 100px;
+    top: -30px;
+    right: -30px;
+    font-size: 14px;
+    padding: 15px 0;
+  }
+}
+
+/* Móviles y pantallas pequeñas */
+@media (max-width: 768px) {
+  .catalogoOutlete {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .imagenes {
+    grid-template-columns: 1fr; /* una sola columna para móviles */
+  }
+
+  .imagenes img,
+  .sillaOutlet .imagenes img {
+    height: auto; /* que la imagen se ajuste automáticamente */
+  }
+
+  .oferta {
+    width: 80px;
+    height: 80px;
+    top: -20px;
+    right: -20px;
+    font-size: 12px;
+    padding: 10px 0;
+  }
+
+  .precio {
+    font-size: 18px;
+  }
+}
+
+/* Extra pequeño: teléfonos muy pequeños */
+@media (max-width: 480px) {
+  .catalogoOutlete {
+    padding: 20px 10px;
+    gap: 20px;
+  }
+
+  .oferta {
+    /* width: 60px;
+    height: 60px; */
+    top: -15px;
+    right: -15px;
+    /* font-size: 10px;
+    padding: 5px 0; */
+  }
+
+  .precio {
+    font-size: 16px;
+  }
+}

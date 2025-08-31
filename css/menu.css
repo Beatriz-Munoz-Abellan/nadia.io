@@ -1,0 +1,246 @@
+/* ========================= CABECERA ========================= */
+header {
+  background-color: #346231;
+  color: #fff;
+  font-size: 20px;
+  padding: 15px;
+}
+
+header .cont {
+  background-color: #346231;
+  color: #fff;
+  position: relative;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centra horizontalmente el logo */
+  padding: 0 30px;
+}
+
+.cont .logo {
+  height: 40px;
+  /* Ajusta el tamaño del logo */
+  object-fit: contain;
+}
+
+.cont-btn {
+  position: absolute;
+  text-align: center;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  right: 5%;
+  top: 20%;
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 45px;
+  color: #346231;
+}
+
+/* ========================= MENÚ PRINCIPAL ========================= */
+.menu-horizontal {
+  font-size: 16px;
+  width: 100%;
+  padding: 8px;
+  background-color: #fff;
+  border-bottom: 2px solid #346231;
+}
+
+.menu-horizontal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-horizontal li {
+  position: relative;
+  /* Necesario para submenú */
+}
+
+.menu-horizontal>ul>li {
+  padding: 10px 20px;
+}
+
+.menu-horizontal a {
+  display: block;
+  text-decoration: none;
+  color: #2f5131;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Hover y enlace activo */
+.menu-horizontal a:hover,
+.menu-horizontal a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #346231;
+}
+
+.menu-horizontal .red:hover,
+.menu-horizontal .red.active {
+  font-weight: bold;
+  border-bottom: 2px solid #ff0000;
+}
+
+/* Color especial */
+.menu-horizontal .red {
+  color: red;
+}
+
+/* ========================= SUBMENÚ ========================= */
+.submenu {
+  position: absolute;
+  background: #fff;
+  width: 200px;
+  border: 1px solid #346231;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: block !important;
+  transform: translateY(10px);
+}
+
+.submenu li {
+  padding: 10px;
+}
+
+.submenu a {
+  color: #2f5131;
+}
+
+/* Mostrar submenú al pasar ratón */
+.menu-horizontal li:hover>.submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+
+}
+
+/* ========================= RESPONSIVE ========================= */
+/* ========================= RESPONSIVE ========================= */
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  left: 20px;
+  top: 27px;
+  z-index: 1100;
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+ .cont-btn {
+   
+    right: 10px;
+   
+  }
+ 
+}
+/* En móviles */
+@media (max-width: 480px) {
+  .menu-horizontal {
+    top: 10px;
+    width: 100%;
+    background: #fff;
+    border-top: 2px solid #346231;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 1000;
+    padding: 0%;
+  }
+
+  .menu-toggle {
+    font-size: 20px;
+  }
+
+  .menu-horizontal.open {
+    max-height: 500px;
+    /* se despliega */
+  }
+
+  .menu-horizontal ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-horizontal>ul>li {
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  /* Submenú en móvil → desplegable al tocar */
+  .submenu {
+    position: relative;
+    border: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .cont .logo {
+    height: 40px;
+    width: 70%;
+    object-fit: contain;
+  }
+
+  .cont-btn {
+    font-size: 10px;
+    width: 100px;
+    right: 5px;
+  padding: 10px;
+  }
+  
+  header .cont {
+    text-align: center;
+  }
+
+  .submenu.open {
+    max-height: 500px;
+    /* se despliega */
+  }
+
+  /* Botón hamburguesa visible */
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+ .cont-btn {
+    font-size: 10px;
+    width: 150px;
+    left: 99px;
+    top: 65px;
+  }
+
+  header .cont {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+ .cont-btn {
+   
+    left: 70px;
+   
+  }
+ 
+}

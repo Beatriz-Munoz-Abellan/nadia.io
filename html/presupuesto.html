@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amuebla</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/nosotros.css">
+  
+    <script src="../js/footer.js" defer></script>
+    <script src="../js/index.js" defer></script>
+    <script src="../js/formulario.js" defer></script>
+</head>
+
+<body>
+    <script src="../js/menu.js"></script>
+
+<section class="formulario">
+  <form class="form-grid" id="presupuestoForm" method="POST" action="../php/procesar.php" autocomplete="on">
+    <h2 class="presupuesto_header">PIDE PRESUPUESTO</h2>
+
+    <div class="grid-container">
+      <input type="text" name="nombre" placeholder="NOMBRE Y APELLIDO" required autocomplete="name">
+      <input type="tel" name="contacto" placeholder="NUM. CONTACTO" required autocomplete="tel">
+      <input type="email" name="email" placeholder="EMAIL" class="grid-full" required autocomplete="email">
+      <textarea name="mensaje" placeholder="¿QUÉ NECESITAS?" class="grid-full" required autocomplete="off"></textarea>
+    </div>
+
+    <div class="checkboxes">
+      <label>
+        <input type="checkbox" name="privacidad" required>
+        Acepto la <a href="../html/terminos-condiciones.html" target="_blank">política de privacidad</a>
+      </label>
+      <label>
+        <input type="checkbox" name="promociones">
+        Quiero que se me informe de las promociones
+      </label>
+    </div>
+<!-- Toast -->
+  <p id="toast" class="toast"></p>
+    <button type="submit" class="enviar">ENVIAR</button>
+  </form>
+
+  
+</section>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  
+</body>
+
+</html>

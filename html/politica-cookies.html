@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Política de Cookies | Amuebla</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/politicas.css">
+
+  <script src="../js/footer.js" defer></script>
+  <script src="../js/index.js" defer></script>
+
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Política de Cookies</h1>
+      <div class="date">Última actualización: 29 de agosto de 2025</div>
+    </header>
+
+    <section>
+      <h2>1. ¿Qué son las cookies?</h2>
+      <p>Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas un sitio web. Permiten,
+        entre otros, recordar tus preferencias o garantizar el funcionamiento técnico de la página.</p>
+    </section>
+
+    <section>
+      <h2>2. ¿Quién es el responsable?</h2>
+      <p><strong>Amuebla</strong><br>
+        Email: <a href="mailto:info@mueblesamuebla.com">info@mueblesamuebla.com</a><br>
+        Teléfono: +34 600 000 000
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Qué cookies usamos en Amuebla</h2>
+      <p>Actualmente utilizamos <strong>únicamente cookies técnicas o necesarias</strong>, imprescindibles para el
+        funcionamiento básico del sitio (por ejemplo, recordar tu elección en el banner de cookies).</p>
+
+      <table aria-label="Listado de cookies">
+        <thead>
+          <tr>
+            <th>Cookie</th>
+            <th>Propósito</th>
+            <th>Duración</th>
+            <th>Propia/Terceros</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>cookies-choice</code></td>
+            <td>Guardar tu preferencia sobre aceptación/rechazo de cookies.</td>
+            <td>Hasta que la elimines (almacenada en el navegador).</td>
+            <td>Propia</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="note">Si en el futuro incorporamos cookies de análisis o marketing, actualizaremos esta política y te
+        pediremos consentimiento antes de activarlas.</p>
+    </section>
+
+    <section>
+      <h2>4. Cómo gestionar o desactivar las cookies</h2>
+      <p>Puedes gestionar las cookies desde la configuración de tu navegador:</p>
+      <ul>
+        <li><strong>Chrome:</strong> Configuración &gt; Privacidad y seguridad &gt; Cookies y otros datos de sitios.
+        </li>
+        <li><strong>Firefox:</strong> Ajustes &gt; Privacidad y seguridad &gt; Cookies y datos del sitio.</li>
+        <li><strong>Safari:</strong> Preferencias &gt; Privacidad.</li>
+        <li><strong>Edge:</strong> Configuración &gt; Cookies y permisos del sitio.</li>
+      </ul>
+      <p class="note">Ten en cuenta que bloquear cookies necesarias puede afectar al funcionamiento del sitio.</p>
+    </section>
+
+    <section>
+      <h2>5. Cambiar o retirar tu consentimiento</h2>
+      <p>Si has interactuado con nuestro banner de cookies y quieres <strong>cambiar tu elección</strong>, puedes
+        hacerlo desde aquí:</p>
+      <div class="actions">
+        <button id="reset-consent">Borrar mi preferencia de cookies</button>
+        <button id="show-help" class="secondary">¿Qué hace este botón?</button>
+      </div>
+      <p id="reset-result" class="note" role="status" aria-live="polite"></p>
+      <p class="note">Al borrar tu preferencia, volverás a ver el banner de cookies la próxima vez que visites una
+        página que lo incluya.</p>
+    </section>
+
+    <section>
+      <h2>6. Cambios en esta política</h2>
+      <p>Podemos actualizar esta Política de Cookies para reflejar cambios legales o técnicos. Publicaremos la versión
+        vigente en esta misma página.</p>
+    </section>
+
+    <div id="footer-container"></div>
+
+  </div>
+
+  <script>
+    // Botón para borrar la preferencia guardada por el banner (localStorage)
+    const resetBtn = document.getElementById('reset-consent');
+    const helpBtn = document.getElementById('show-help');
+    const result = document.getElementById('reset-result');
+
+    function clearConsent() {
+      try {
+        localStorage.removeItem('cookies-choice');
+        result.textContent = 'Preferencia eliminada. Verás el banner de cookies de nuevo cuando visites una página que lo muestre.';
+      } catch (e) {
+        result.textContent = 'No se pudo borrar la preferencia. Revisa los permisos del navegador o prueba en otro navegador.';
+      }
+    }
+
+    function explain() {
+      result.textContent = 'Este botón borra la preferencia guardada (aceptar/rechazar). No borra otras cookies del navegador.';
+    }
+
+    resetBtn.addEventListener('click', clearConsent);
+    helpBtn.addEventListener('click', explain);
+  </script>
+</body>
+
+</html>
