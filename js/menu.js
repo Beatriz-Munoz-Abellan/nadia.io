@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <img class="logo" src="/imag-optim/logo.webp" alt="Logo">
         </div>
         <div class="boton">
-          <a href="../html/presupuesto.html" class="cont-btn"><b>Pedir Presupuesto</b></a>
+          <a href="/html/presupuesto.html" class="cont-btn"><b>Pedir Presupuesto</b></a>
         </div>
       </div>
     </header>
@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuHTML = `
     <nav class="menu-horizontal">
       <ul>
-        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="/index.html">Inicio</a></li>
         <li>
           <a href="#">Muebles</a>
           <ul class="submenu">
-            <li><a href="../html/armarios.html">Armarios</a></li>
-            <li><a href="../html/salones.html">Salones</a></li>
+            <li><a href="/html/armarios.html">Armarios</a></li>
+            <li><a href="/html/salones.html">Salones</a></li>
             <li><a href="#">H. Juveniles</a></li>
-            <li><a href="./html/h-matrimonios.html">H. Matrimonios</a></li>
+            <li><a href="/html/h-matrimonios.html">H. Matrimonios</a></li>
             <li><a href="#">Despachos</a></li>
           </ul>
         </li>
