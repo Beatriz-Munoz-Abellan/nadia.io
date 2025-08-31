@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <header>
       <div class="cont">
         <div class="cont-logo">
-          <img class="logo" src="../imag-optim/logo.webp" alt="Logo">
+          <img class="logo" src="/imag-optim/logo.webp" alt="Logo">
         </div>
         <div class="boton">
           <a href="/html/presupuesto.html" class="cont-btn"><b>Pedir Presupuesto</b></a>
@@ -17,30 +17,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuHTML = `
     <nav class="menu-horizontal">
       <ul>
-        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="/index.html">Inicio</a></li>
         <li>
           <a href="#">Muebles</a>
           <ul class="submenu">
-            <li><a href="./html/armarios.html">Armarios</a></li>
-            <li><a href="./html/salones.html">Salones</a></li>
+            <li><a href="/html/armarios.html">Armarios</a></li>
+            <li><a href="/html/salones.html">Salones</a></li>
             <li><a href="#">H. Juveniles</a></li>
-            <li><a href="./html/h-matrimonios.html">H. Matrimonios</a></li>
+            <li><a href="/html/h-matrimonios.html">H. Matrimonios</a></li>
             <li><a href="#">Despachos</a></li>
           </ul>
         </li>
         <li>
           <a href="#">Complementos</a>
           <ul class="submenu">
-          <li><a href="./html/vestidor.html">Organizadores</a></li>
-          <li><a href="./html/cabezales.html">Cabezales TAPIZADOS</a></li>
-          <li><a href="./html/colchones.html">Colchones</a></li>
-          <li><a href="./html/almohadas.html">Almohadas</a></li>
-          <li><a href="./html/escritorios.html">Patas y herrajes</a></li>
-          <li><a href="./html/sillas.html">Sillas</a></li>
+          <li><a href="/html/vestidor.html">Organizadores</a></li>
+          <li><a href="/html/cabezales.html">Cabezales TAPIZADOS</a></li>
+          <li><a href="/html/colchones.html">Colchones</a></li>
+          <li><a href="/html/almohadas.html">Almohadas</a></li>
+          <li><a href="/html/escritorios.html">Patas y herrajes</a></li>
+          <li><a href="/html/sillas.html">Sillas</a></li>
           </ul>
         </li>
-        <li><a class="red" href="./html/outlet.html">Outlet</a></li>
-        <li><a href="./html/nosotros.html">Nosotros</a></li>
+        <li><a class="red" href="/html/outlet.html">Outlet</a></li>
+        <li><a href="/html/nosotros.html">Nosotros</a></li>
       </ul>
     </nav>
   `;
