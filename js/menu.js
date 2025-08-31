@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <header>
       <div class="cont">
         <div class="cont-logo">
-          <img class="logo" src="./imag-optim/logo.webp" alt="Logo">
+          <img class="logo" src="/imag-optim/logo.webp" alt="Logo">
         </div>
         <div class="boton">
           <a href="/html/presupuesto.html" class="cont-btn"><b>Pedir Presupuesto</b></a>

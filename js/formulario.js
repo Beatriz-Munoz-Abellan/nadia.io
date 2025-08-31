@@ -6,7 +6,7 @@ form.addEventListener('submit', function(e){
 
     const formData = new FormData(form);
 
-    fetch('./php/procesar.php', {
+    fetch('../php/procesar.php', {
         method: 'POST',
         body: formData
     })
