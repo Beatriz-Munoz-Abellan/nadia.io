@@ -10,7 +10,7 @@ if (!container) {
     <div id="cookie-banner" class="cookie-banner">
       <p>
         Usamos cookies propias para el correcto funcionamiento de la web.
-        <a href="../html/politica-cookies.html" target="_blank">Más información</a>.
+        <a href="./html/politica-cookies.html" target="_blank">Más información</a>.
       </p>
       <div class="cookie-buttons">
         <button id="accept-cookies">Aceptar</button>
