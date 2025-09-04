@@ -3,12 +3,13 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #346231;
-  color: #fff;
-  padding: 15px;
+  background: #c0c0c0;
+  color: #000000;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: 2px solid #346231;
   z-index: 9999;
   font-size: 14px;
 }

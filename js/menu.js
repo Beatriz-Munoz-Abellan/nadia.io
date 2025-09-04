@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <ul class="submenu">
             <li><a href="/html/armarios.html">Armarios</a></li>
             <li><a href="/html/salones.html">Salones</a></li>
-            <li><a href="#">H. Juveniles</a></li>
+            <li><a href="/html/h-juvenil.html">H. Juveniles</a></li>
             <li><a href="/html/h-matrimonios.html">H. Matrimonios</a></li>
-            <li><a href="#">Despachos</a></li>
+            <li><a href="/html/despachos.html">Despachos</a></li>
           </ul>
         </li>
         <li>

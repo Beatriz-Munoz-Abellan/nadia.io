@@ -141,6 +141,13 @@ footer a {
 
 /* Móviles muy pequeños */
 @media (max-width: 480px) {
+  #backToTopBtn {
+    bottom: 55px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+}
   footer {
     padding: 15px 10px;
   }

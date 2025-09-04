@@ -80,6 +80,7 @@
 .colchon .infoExtra p, .almohada .modelo, .almohada .infoExtra p{
   text-align: left;
   font-size: 14px;
+  margin-top: 8px;
   text-transform: none;
   color: #333;
 }
@@ -101,6 +102,11 @@
 
 
 /* ==================== SILLAS// ALMOHADA ==================== */
+
+#cataloAlmohada{
+  grid-template-columns: repeat(3, 1fr);
+  
+}
 
 .silla .modelo {
   margin-top: 8px;
@@ -145,8 +151,6 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
-
-
 
 .vestidor, .escritorio{
   position: relative;
@@ -226,10 +230,12 @@
 }
 
 @media (max-width: 992px) {
-  #colchones, #vestidores, #escritorios, .catalogos {
+  #colchones, #vestidores, #escritorios, .catalogos, #cataloAlmohada {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
+
+
 
   .colchon .colchonExtendido {
     max-width: 80%;
@@ -243,11 +249,15 @@
 
 /* Móviles */
 @media (max-width: 600px) {
+ #cataloAlmohada{
+    grid-template-columns:  1fr;
+
+  }
   .catalogos {
-    width: 100%;
+    width: 90%;
   }
 
-  #colchones, #vestidores {
+  #colchones {
     grid-template-columns: 1fr;
     gap: 10px;
   }
